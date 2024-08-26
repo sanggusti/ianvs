@@ -1,0 +1,25 @@
+benchmarkingjob:
+  name: "benchmarkingjob"
+  workspace: "./workspace"
+
+  testenv: "./examples/collaborative-speculative-decoding/testenv/testenv.yaml"
+
+  test_object:
+    type: "algorithms"
+    algorithms:
+      - name: "mtbench_test"
+        url: "./examples/collaborative-speculative-decoding/testalgorithms/gen_algorithm.yaml"
+
+  rank:
+    sort_by: [{"acc":"descend"}]
+    visualization:
+      mode: "selected_only"
+      method: "print_table"
+
+    selected_dataitem:
+      paradigms: ["all"]
+      modules: ["all"]
+      hyperparameters: ["all"]
+      metrics: ["acc"]
+    
+    save_mode: "selected_and_all"

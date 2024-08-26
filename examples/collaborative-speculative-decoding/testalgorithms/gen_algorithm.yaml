@@ -1,0 +1,28 @@
+algorithm:
+  paradigm_type: ""
+  modules:
+    - type: "smallmodel"
+      name: "FSGen"
+      url: "./examples/collaborative-speculative-decoding/testalgorithms/gen_algorithm.py"
+      hyperparameters:
+        - small_model_name:
+          values:
+            - "Qwen/Qwen1.5-0.5B-Chat"
+        - bigger_model_name:
+          values:
+            - "Qwen/Qwen1.5-1.8B-Chat"
+        - router:
+          values:
+            - "normal"
+        - sampling:
+          values:
+            - 500
+        - method:
+          values:
+          # Options are ContrastiveDecoding, SpeculativeDecoding, ProxyFineTuning and OracleDecoding
+            - "ContrastiveDecoding"
+
+    # - type: "biggermodel"
+    #   name: "CloudModel"
+    #   url: "./examples/collaborative-speculative-decoding/testalgorithms/gen_algorithm.py"
+    #   hyperparameters:

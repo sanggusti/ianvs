@@ -1,0 +1,8 @@
+testenv:
+  dataset:
+    train_data: "./dataset/train_data/data.jsonl"
+    test_data: "./dataset/test_data/data.jsonl"
+
+  metrics:
+    - name: "acc"
+      url: "./examples/collaborative-speculative-decoding/testenv/acc.py"
